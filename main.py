@@ -1,13 +1,17 @@
-#TODO: Create a letter using starting_letter.txt 
-#for each name in invited_names.txt
+
+#reading in the names from invited_names.txt into the names variable
 with open("./Input/Names/invited_names.txt") as file:
     names = file.readlines()
+    #striping out the return characters
+    for name in names:
+        names[names.index(name)] = name.strip("\n")
 
-#strip out the return characters
-for name in names:
-    names[names.index(name)] = name.strip("\n")
+#reading in the lines from starting_letter.txt into the letter variable
+with open("./Input/Letters/starting_letter.txt") as file:
+    letter = file.readlines()
 
-print(names)
+print(letter)
+
 #Replace the [name] placeholder with the actual name.
 #Save the letters in the folder "ReadyToSend".
     
