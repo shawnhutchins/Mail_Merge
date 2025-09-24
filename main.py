@@ -10,10 +10,14 @@ with open("./Input/Names/invited_names.txt") as file:
 with open("./Input/Letters/starting_letter.txt") as file:
     letter = file.readlines()
 
-print(letter)
-
 #Replace the [name] placeholder with the actual name.
-#Save the letters in the folder "ReadyToSend".
+for name in names:
+    new_letter = []
+    for line in letter:
+        new_letter.append(line.replace("[name]", name))
+    #write the new letter to a file in the "ReadyToSend" folder
+    with open(f"./Output/ReadyToSend/{name}.txt", mode="w") as file:
+        file.writelines(new_letter)
     
 #Hint1: This method will help you: https://www.w3schools.com/python/ref_file_readlines.asp
     #Hint2: This method will also help you: https://www.w3schools.com/python/ref_string_replace.asp
