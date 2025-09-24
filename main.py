@@ -16,7 +16,7 @@ for name in names:
     for line in letter:
         new_letter.append(line.replace("[name]", name))
     #write the new letter to a file in the "ReadyToSend" folder
-    with open(f"./Output/ReadyToSend/{name}.txt", mode="w") as file:
+    with open(f"./Output/ReadyToSend/letter_for_{name}.txt", mode="w") as file:
         file.writelines(new_letter)
     
 #Hint1: This method will help you: https://www.w3schools.com/python/ref_file_readlines.asp
