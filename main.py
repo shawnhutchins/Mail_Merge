@@ -1,3 +1,4 @@
+PLACEHOLDER = "[name]"
 
 #reading in the names from invited_names.txt into the names variable
 with open("./Input/Names/invited_names.txt") as file:
@@ -14,7 +15,7 @@ with open("./Input/Letters/starting_letter.txt") as file:
 for name in names:
     new_letter = []
     for line in letter:
-        new_letter.append(line.replace("[name]", name))
+        new_letter.append(line.replace(PLACEHOLDER, name))
     #write the new letter to a file in the "ReadyToSend" folder
     with open(f"./Output/ReadyToSend/letter_for_{name}.txt", mode="w") as file:
         file.writelines(new_letter)
